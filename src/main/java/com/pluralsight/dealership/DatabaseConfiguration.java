@@ -24,7 +24,6 @@ public class DatabaseConfiguration {
         dataSource.setUrl(url);
         dataSource.setUsername(username);
         dataSource.setPassword(password);
-
     }
 
 }

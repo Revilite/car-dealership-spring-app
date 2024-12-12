@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class LeaseContractDAOMysqlImpl implements LeaseContractDao {
     private DataSource dataSource;
 
@@ -94,5 +95,44 @@ public class LeaseContractDAOMysqlImpl implements LeaseContractDao {
             throw new RuntimeException(e);
         }
         return contracts;
+    }
+
+    @Override
+    public LeaseContract findLeaseById(int id) {
+        String date, customerName, customerEmail, make, model, vehicleType, color;
+        int vin, year, odometer;
+        double price;
+        Vehicle vehicleSold;
+
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement findLeaseById = connection.prepareStatement("""
+                    SELECT * FROM lease_contracts
+                    JOIN vehicles ON vehicles.vin = lease_contracts.vin
+                    WHERE lease_contract_id = ?;
+                    """);
+
+            findLeaseById.setInt(1, id);
+
+            ResultSet resultSet = findLeaseById.executeQuery();
+
+            resultSet.next();
+            date = resultSet.getString("date");
+            customerName = resultSet.getString("customer_name");
+            customerEmail = resultSet.getString("customer_email");
+            make = resultSet.getString("make");
+            model = resultSet.getString("model");
+            vehicleType = resultSet.getString("vehicle_type");
+            color = resultSet.getString("color");
+            vin = resultSet.getInt("vin");
+            year = resultSet.getInt("year");
+            odometer = resultSet.getInt("odometer");
+            price = resultSet.getDouble("price");
+
+
+            vehicleSold = new VehicleforDummies(vin, year, make, model, vehicleType, color, odometer, price);
+            return new LeaseContract(date, customerName, customerEmail, vehicleSold);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

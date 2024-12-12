@@ -17,12 +17,12 @@ public class SalesContractController {
         this.salesDB = salesDB;
     }
 
-    @GetMapping
+    @GetMapping("/sale")
     public SalesContract getSalesById(@RequestParam("id") int id) {
         return salesDB.findSalesContractById(id);
     }
 
-    @PostMapping("/addSale")
+    @PostMapping("/sale")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void addSalesContract(@RequestBody SalesContract contract){
         salesDB.saveSalesContract(contract);

@@ -19,6 +19,9 @@ public class LeaseContract extends Contract {
         leaseFee = vehicleSold.getPrice() * .07;
     }
 
+    public LeaseContract() {
+    }
+
     public double getExpectedEndingValue() {
         return expectedEndingValue;
     }

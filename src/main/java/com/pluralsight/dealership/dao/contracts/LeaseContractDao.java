@@ -7,4 +7,5 @@ import java.util.List;
 public interface LeaseContractDao {
     void addLeaseContract(LeaseContract contract);
     List<LeaseContract> findAllLeaseContracts();
+    LeaseContract findLeaseById(int id);
 }
