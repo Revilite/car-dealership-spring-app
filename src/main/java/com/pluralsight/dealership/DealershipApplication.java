@@ -11,15 +11,16 @@ import javax.sql.DataSource;
 @SpringBootApplication
 public class DealershipApplication implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DealershipApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DealershipApplication.class, args);
+    }
 
-	@Autowired
-	private DataSource datasource;
+    @Autowired
+    DataSource dataSource;
 
-	@Override
-	public void run(String... args) throws Exception {
-		new UserInterface(datasource).display();
-	}
+    @Override
+
+    public void run(String... args) throws Exception {
+        new UserInterface(dataSource).display();
+    }
 }

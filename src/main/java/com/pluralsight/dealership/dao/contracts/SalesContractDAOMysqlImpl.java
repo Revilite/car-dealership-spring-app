@@ -3,6 +3,7 @@ package com.pluralsight.dealership.dao.contracts;
 import com.pluralsight.dealership.model.contract.SalesContract;
 import com.pluralsight.dealership.model.vehicle.Vehicle;
 import com.pluralsight.dealership.model.vehicle.VehicleforDummies;
+import org.springframework.stereotype.Component;
 
 
 import javax.sql.DataSource;
@@ -12,7 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class SalesContractDAOMysqlImpl implements SalesContractDao {
     private final DataSource dataSource;
 

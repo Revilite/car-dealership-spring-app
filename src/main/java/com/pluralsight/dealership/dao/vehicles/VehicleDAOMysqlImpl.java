@@ -1,6 +1,7 @@
 package com.pluralsight.dealership.dao.vehicles;
 
 import com.pluralsight.dealership.model.vehicle.VehicleforDummies;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 
@@ -11,11 +12,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+//Prepares class to be injected into spring
 @Component
 public class VehicleDAOMysqlImpl implements VehicleDao {
 
 
     private final DataSource dataSource;
+
 
     public VehicleDAOMysqlImpl(DataSource dataSource) {
         this.dataSource = dataSource;

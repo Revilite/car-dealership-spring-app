@@ -3,6 +3,7 @@ package com.pluralsight.dealership.dao.contracts;
 import com.pluralsight.dealership.model.contract.LeaseContract;
 import com.pluralsight.dealership.model.vehicle.Vehicle;
 import com.pluralsight.dealership.model.vehicle.VehicleforDummies;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
