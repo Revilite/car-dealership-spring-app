@@ -8,4 +8,6 @@ public interface SalesContractDao {
     void saveSalesContract(SalesContract salesContract);
 
     List<SalesContract> findAllSalesContracts();
+
+    SalesContract findSalesContractById(int id);
 }
