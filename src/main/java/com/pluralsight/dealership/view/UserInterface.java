@@ -328,7 +328,7 @@ public class UserInterface {
             return;
         }
 
-        vehicleDB.addVehicle(vin, year, make, model, type, color, mileage, price);
+        vehicleDB.addVehicle(new VehicleforDummies(vin, year, make, model, type, color, mileage, price));
         System.out.println(ColorCodes.GREEN + "Car added!" + ColorCodes.RESET);
 
     }

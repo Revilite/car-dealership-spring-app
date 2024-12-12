@@ -441,10 +441,9 @@ public class VehicleDAOMysqlImpl implements VehicleDao {
         try (Connection connection = dataSource.getConnection()) {
             //Prepare delete statement in sql, delete from vehicles and inventory
             PreparedStatement removeVehicle = connection.prepareStatement("""
-                    DELETE vehicles, inventory
-                    FROM inventory
-                    JOIN vehicles ON inventory.vin = vehicles.vin
-                    WHERE inventory.vin = ?;
+                    DELETE vehicles
+                    FROM vehicles
+                    WHERE vin = ?;
                     """);
             removeVehicle.setInt(1, vin);
             //executes update
@@ -457,7 +456,7 @@ public class VehicleDAOMysqlImpl implements VehicleDao {
     }
 
     @Override
-    public void addVehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
+    public void addVehicle(VehicleforDummies vehicle) {
         //get connection from datasource
         try (Connection connection = dataSource.getConnection()) {
             // prepare insert statement
@@ -466,14 +465,14 @@ public class VehicleDAOMysqlImpl implements VehicleDao {
                     (?,?,?,?,?,?,?,?,0);
                     """);
             //fill in all the ? to fill insert statement.
-            addVehicle.setInt(1, vin);
-            addVehicle.setInt(2, year);
-            addVehicle.setString(3, make);
-            addVehicle.setString(4, model);
-            addVehicle.setString(5, vehicleType);
-            addVehicle.setString(6, color);
-            addVehicle.setInt(7, odometer);
-            addVehicle.setDouble(8, price);
+            addVehicle.setInt(1, vehicle.getVin());
+            addVehicle.setInt(2, vehicle.getYear());
+            addVehicle.setString(3, vehicle.getMake());
+            addVehicle.setString(4, vehicle.getModel());
+            addVehicle.setString(5, vehicle.getVehicleType());
+            addVehicle.setString(6, vehicle.getColor());
+            addVehicle.setInt(7, vehicle.getMileage());
+            addVehicle.setDouble(8, vehicle.getPrice());
 
             //execute statement
             addVehicle.executeUpdate();

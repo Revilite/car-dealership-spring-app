@@ -6,6 +6,9 @@ public class VehicleforDummies extends Vehicle {
         super(vin, year, make, model, vehicleType, color, odometer, price);
     }
 
+    public VehicleforDummies() {
+        super();
+    }
 
     public int getMileage() {
         return super.getOdometer();

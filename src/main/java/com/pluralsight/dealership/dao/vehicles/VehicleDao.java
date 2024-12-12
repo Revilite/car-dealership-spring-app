@@ -18,5 +18,5 @@ import java.util.List;
         VehicleforDummies findVehicleByVIN(int vin);
 
         void removeVehicleByVIN(int vin);
-        void addVehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price);
+        void addVehicle(VehicleforDummies vehicle);
 }

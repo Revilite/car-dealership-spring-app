@@ -4,10 +4,8 @@ package com.pluralsight.dealership.controller.vehicle;
 import com.pluralsight.dealership.dao.vehicles.VehicleDao;
 import com.pluralsight.dealership.model.vehicle.VehicleforDummies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -59,4 +57,15 @@ public class VehicleController {
         return vehicleDB.findVehicleByVehicleType(type);
     }
 
+    @PostMapping("/addVehicle")
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public void addVehicles(@RequestBody VehicleforDummies vehicle){
+        vehicleDB.addVehicle(vehicle);
+    }
+
+    @DeleteMapping("/removeVehicle")
+    @ResponseStatus(code  = HttpStatus.NO_CONTENT)
+    public void deleteVehicleById(@RequestParam("vin") int vin){
+        vehicleDB.removeVehicleByVIN(vin);
+    }
 }
