@@ -41,6 +41,9 @@ public class SalesContract extends Contract {
 
     }
 
+    public SalesContract() {
+    }
+
     public double getSalesTaxAmount() {
         return salesTaxAmount;
     }
