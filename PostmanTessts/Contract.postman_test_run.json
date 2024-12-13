@@ -1,0 +1,154 @@
+{
+	"id": "7a1c0d09-18a0-488d-bd58-184b0d131b4c",
+	"name": "Dealership",
+	"timestamp": "2024-12-13T18:39:34.040Z",
+	"collection_id": "38287978-49360adc-510e-4fa0-983e-18b5b873954a",
+	"folder_id": "38287978-ef3fd2a5-3a87-43be-99c0-a9f915430092",
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-12-13T18:39:33.009Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "8a4688ad-10d5-42f8-8e06-eb24147c9546",
+			"name": "Add Lease Contract",
+			"url": "http://localhost:8080/api/lease",
+			"time": 393,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				393
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c882588c-ae59-4404-81a4-a338d09dcdce",
+			"name": "Add Sales contract",
+			"url": "http://localhost:8080/api/sale",
+			"time": 11,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "af52a8b6-a33d-45f5-bec8-9190e1a064c9",
+			"name": "Get Sales By Id",
+			"url": "http://localhost:8080/api/sale/3",
+			"time": 27,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				27
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1d923e62-f058-4e02-8657-f13901c45176",
+			"name": "Find Lease By Id",
+			"url": "http://localhost:8080/api/lease/6",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "94fd1868-0225-45a7-8aae-7f2c5faf2f94",
+			"name": "Find All Leases",
+			"url": "http://localhost:8080/api/allLeases",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a1e037b9-5f03-4125-9ad6-4f568f37813f",
+			"name": "Find All Sales",
+			"url": "http://localhost:8080/api/allSales",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 450,
+	"collection": {
+		"requests": [
+			{
+				"id": "8a4688ad-10d5-42f8-8e06-eb24147c9546",
+				"method": "POST"
+			},
+			{
+				"id": "c882588c-ae59-4404-81a4-a338d09dcdce",
+				"method": "POST"
+			},
+			{
+				"id": "af52a8b6-a33d-45f5-bec8-9190e1a064c9",
+				"method": "GET"
+			},
+			{
+				"id": "1d923e62-f058-4e02-8657-f13901c45176",
+				"method": "GET"
+			},
+			{
+				"id": "94fd1868-0225-45a7-8aae-7f2c5faf2f94",
+				"method": "GET"
+			},
+			{
+				"id": "a1e037b9-5f03-4125-9ad6-4f568f37813f",
+				"method": "GET"
+			}
+		]
+	}
+}

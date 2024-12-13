@@ -1,0 +1,264 @@
+{
+	"id": "6e4e3183-6bf9-4e54-902f-9e080310e120",
+	"name": "Dealership",
+	"timestamp": "2024-12-13T18:41:44.287Z",
+	"collection_id": "38287978-49360adc-510e-4fa0-983e-18b5b873954a",
+	"folder_id": "38287978-079c3e11-514b-4c9a-ab59-468e82faea35",
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-12-13T18:41:43.173Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "d204967c-2edc-4415-887b-a5684c967750",
+			"name": "Get All Vehicles",
+			"url": "http://localhost:8080/api/allCars",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a4ef0048-c4d2-46ee-9608-9725d098deec",
+			"name": "find Vehicle Price",
+			"url": "http://localhost:8080/api/vehiclePrice?minPrice=10000&maxPrice=100000",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2754bb3d-39a4-4085-84c5-e5104b1fd28e",
+			"name": "Find Vehicle by Make Model",
+			"url": "http://localhost:8080/api/vehicleMakeModel?make=Honda&model=Pilot",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a8846421-4c89-4757-82bd-a2ee36070218",
+			"name": "Find vehicle by year",
+			"url": "http://localhost:8080/api/vehicleYear?minYear=1999&maxYear=2020",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "76d3f189-70fd-4f76-a4d4-d0a1ec194800",
+			"name": "Find Vehicles by Color",
+			"url": "http://localhost:8080/api/vehicleColor?color=white",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a5310e14-d664-47eb-8dcd-408da2f5a227",
+			"name": "Find vehicles by Miles",
+			"url": "http://localhost:8080/api/vehicleMiles?minMiles=10000&maxMiles=100000",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6add1329-32c8-48db-aff6-433bf8de0cde",
+			"name": "Find vehicle by type",
+			"url": "http://localhost:8080/api/vehicleType?type=hypercar",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "181588a9-161a-4d6e-8af1-8294faaa7eb6",
+			"name": "Find Vehicle By Id",
+			"url": "http://localhost:8080/api/vehicle/101236",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "05e045d0-daea-4cff-9de7-0b28b7c15c04",
+			"name": "Add a vehicle",
+			"url": "http://localhost:8080/api/addVehicle",
+			"time": 18,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "44669ce4-77b0-45b0-bd33-cb04da795364",
+			"name": "Remove Vehicle by VIN",
+			"url": "http://localhost:8080/api/removeVehicle/101236",
+			"time": 3,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "38902a86-a0e0-4fab-984f-151b94bcca45",
+			"name": "Change Vehicle",
+			"url": "http://localhost:8080/api/changeVehicle/101239",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 67,
+	"collection": {
+		"requests": [
+			{
+				"id": "d204967c-2edc-4415-887b-a5684c967750",
+				"method": "GET"
+			},
+			{
+				"id": "a4ef0048-c4d2-46ee-9608-9725d098deec",
+				"method": "GET"
+			},
+			{
+				"id": "2754bb3d-39a4-4085-84c5-e5104b1fd28e",
+				"method": "GET"
+			},
+			{
+				"id": "a8846421-4c89-4757-82bd-a2ee36070218",
+				"method": "GET"
+			},
+			{
+				"id": "76d3f189-70fd-4f76-a4d4-d0a1ec194800",
+				"method": "GET"
+			},
+			{
+				"id": "a5310e14-d664-47eb-8dcd-408da2f5a227",
+				"method": "GET"
+			},
+			{
+				"id": "6add1329-32c8-48db-aff6-433bf8de0cde",
+				"method": "GET"
+			},
+			{
+				"id": "181588a9-161a-4d6e-8af1-8294faaa7eb6",
+				"method": "GET"
+			},
+			{
+				"id": "05e045d0-daea-4cff-9de7-0b28b7c15c04",
+				"method": "POST"
+			},
+			{
+				"id": "44669ce4-77b0-45b0-bd33-cb04da795364",
+				"method": "DELETE"
+			},
+			{
+				"id": "38902a86-a0e0-4fab-984f-151b94bcca45",
+				"method": "PUT"
+			}
+		]
+	}
+}
