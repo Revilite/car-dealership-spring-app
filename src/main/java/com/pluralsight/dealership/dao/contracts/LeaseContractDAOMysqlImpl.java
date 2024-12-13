@@ -4,6 +4,7 @@ import com.pluralsight.dealership.model.contract.LeaseContract;
 import com.pluralsight.dealership.model.vehicle.Vehicle;
 import com.pluralsight.dealership.model.vehicle.VehicleforDummies;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

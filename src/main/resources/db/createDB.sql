@@ -66,9 +66,11 @@ CREATE TABLE `inventory`(
     `vin` INT,
     PRIMARY KEY(inventory_id),
     FOREIGN KEY(vin) REFERENCES vehicles(vin)
-    ON DELETE SET NULL,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     FOREIGN KEY(dealership_id) REFERENCES dealerships(dealership_id)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 INSERT INTO inventory VALUES (null, 1, 101234);
@@ -118,7 +120,7 @@ CREATE TABLE `sales_contracts`(
 
     PRIMARY KEY (sales_contract_id),
     FOREIGN KEY (vin) REFERENCES vehicles(vin)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
 
 );
 
@@ -140,7 +142,8 @@ CREATE TABLE `lease_contracts`(
 
     PRIMARY KEY (lease_contract_id),
     FOREIGN KEY (vin) REFERENCES vehicles(vin)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 INSERT INTO `lease_contracts` (`date`, `customer_name`, `customer_email`, `vin`, `total_price`, `expected_ending_value`, `lease_fee`, `monthly_payment`)
 VALUES

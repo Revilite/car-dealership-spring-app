@@ -1,6 +1,7 @@
 package com.pluralsight.dealership.dao.vehicles;
 
 import com.pluralsight.dealership.model.vehicle.VehicleforDummies;
+import org.springframework.boot.info.JavaInfo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -484,6 +485,31 @@ public class VehicleDAOMysqlImpl implements VehicleDao {
     }
 
 
+    @Override
+    public void changeVehicle(VehicleforDummies vehicle, int vin) {
+        try (Connection connection = dataSource.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement("""
+                    UPDATE vehicles
+                    SET vin=?, year=?, make=?, model=?, vehicle_type=?, color=?, odometer=?, price=?, sold=0
+                    WHERE vin = ?;
+                    """);
+            preparedStatement.setInt(1, vehicle.getVin());
+            preparedStatement.setInt(2, vehicle.getYear());
+            preparedStatement.setString(3, vehicle.getMake());
+            preparedStatement.setString(4, vehicle.getModel());
+            preparedStatement.setString(5, vehicle.getVehicleType());
+            preparedStatement.setString(6, vehicle.getColor());
+            preparedStatement.setInt(7, vehicle.getMileage());
+            preparedStatement.setDouble(8, vehicle.getPrice());
+            preparedStatement.setInt(9, vin);
+
+            preparedStatement.executeUpdate();
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 

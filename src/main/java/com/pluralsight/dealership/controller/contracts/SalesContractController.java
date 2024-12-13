@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class SalesContractController {
@@ -17,14 +19,19 @@ public class SalesContractController {
         this.salesDB = salesDB;
     }
 
-    @GetMapping("/sale")
-    public SalesContract getSalesById(@RequestParam("id") int id) {
+    @GetMapping("/sale/{id}")
+    public SalesContract getSalesById(@PathVariable("id") int id) {
         return salesDB.findSalesContractById(id);
     }
 
     @PostMapping("/sale")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void addSalesContract(@RequestBody SalesContract contract){
+    public void addSalesContract(@RequestBody SalesContract contract) {
         salesDB.saveSalesContract(contract);
+    }
+
+    @GetMapping("/allSales")
+    public List<SalesContract> getAllSales() {
+        return salesDB.findAllSalesContracts();
     }
 }

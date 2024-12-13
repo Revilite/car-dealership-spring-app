@@ -21,8 +21,6 @@ public class SalesContractDAOMysqlImpl implements SalesContractDao {
     public SalesContractDAOMysqlImpl(DataSource dataSource) {
         this.dataSource = dataSource;
     }
-
-
     @Override
     public void saveSalesContract(SalesContract salesContract) {
 

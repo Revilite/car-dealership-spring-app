@@ -57,15 +57,28 @@ public class VehicleController {
         return vehicleDB.findVehicleByVehicleType(type);
     }
 
+    @GetMapping("/vehicle/{vin}")
+    public VehicleforDummies findVehicleById(@PathVariable("vin") int vin){
+        return vehicleDB.findVehicleByVIN(vin);
+    }
+
+    @PutMapping("/changeVehicle/{vin}")
+    public void changeVehicle(@RequestBody VehicleforDummies vehicle, @PathVariable("vin") int vin){
+        vehicleDB.changeVehicle(vehicle, vin);
+    }
+
     @PostMapping("/addVehicle")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void addVehicles(@RequestBody VehicleforDummies vehicle){
         vehicleDB.addVehicle(vehicle);
     }
 
-    @DeleteMapping("/removeVehicle")
+    @DeleteMapping("/removeVehicle/{vin}")
     @ResponseStatus(code  = HttpStatus.NO_CONTENT)
-    public void deleteVehicleById(@RequestParam("vin") int vin){
+    public void deleteVehicleById(@PathVariable("vin") int vin){
         vehicleDB.removeVehicleByVIN(vin);
     }
 }
+
+
+

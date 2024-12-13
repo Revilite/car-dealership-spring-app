@@ -19,4 +19,5 @@ import java.util.List;
 
         void removeVehicleByVIN(int vin);
         void addVehicle(VehicleforDummies vehicle);
+        void changeVehicle(VehicleforDummies vehicle, int vin);
 }
